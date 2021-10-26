@@ -14,8 +14,8 @@ Please make sure that Maven is installed on you computer. Application will start
 [Swagger UI](http://localhost:8080/swagger-ui.html#/open-hours-controller)
 
 ## Improvement Areas
-Input json is good for frontend, but it is hard to process it in backend side since variable names cannot be accessed without using reflection.
-Instead of giving day name to variable name, we can put name property which holds name of the day.
+Current input json is good for frontend, but it is hard to process it in the backend side since variable names cannot be accessed without using reflection in Java.
+Instead of giving day name to variable name, we would put a 'name' property which holds name of the day in the object.
 Input json would be:
 
 
