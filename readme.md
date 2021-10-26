@@ -1,6 +1,7 @@
 ## Opening Hours
 
 This is a dockerized application that converts opening hours to human-readable version.
+Application is build on the clean code architecture.
 
 ## Installation
 
