@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "ddba70bf-33e8-469f-a8de-b761c377c984",
+		"name": "OpenHours",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetReadable",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"monday\": [],\n    \"tuesday\": [\n        {\n            \"type\": \"open\",\n            \"value\": 36000\n        },\n        {\n            \"type\": \"close\",\n            \"value\": 64800\n        }\n    ],\n    \"wednesday\": [],\n    \"thursday\": [\n        {\n            \"type\": \"open\",\n            \"value\": 37800\n        },\n        {\n            \"type\": \"close\",\n            \"value\": 64800\n        }\n    ],\n    \"friday\": [\n        {\n            \"type\": \"open\",\n            \"value\": 36000\n        }\n    ],\n    \"saturday\": [\n        {\n            \"type\": \"close\",\n            \"value\": 3600\n        },\n        {\n            \"type\": \"open\",\n            \"value\": 36000\n        }\n    ],\n    \"sunday\": [\n        {\n            \"type\": \"close\",\n            \"value\": 3600\n        },\n        {\n            \"type\": \"open\",\n            \"value\": 43200\n        },\n        {\n            \"type\": \"close\",\n            \"value\": 75600\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hours/readable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hours",
+						"readable"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
