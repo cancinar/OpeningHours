@@ -3,6 +3,7 @@ package com.cinar.openinghours.core.domain;
 import static org.springframework.util.CollectionUtils.isEmpty;
 
 import com.cinar.openinghours.base.domain.Domain;
+import com.cinar.openinghours.base.exception.ValidationException;
 import com.cinar.openinghours.core.domain.enums.Types;
 import com.cinar.openinghours.core.domain.enums.WeekDays;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import lombok.Data;
@@ -74,7 +76,8 @@ public class WeekDomain extends Domain {
               .getOrder();
 
           final DayDomain dayDomain = orderAndDayScheduleMap.get(order);
-          final HourDomain firstClosedHour = dayDomain.getFirstClosedHour();
+          final HourDomain firstClosedHour = Optional.ofNullable(dayDomain.getFirstClosedHour())
+              .orElseThrow(() -> new ValidationException("Next closing hour cannot be found!"));
 
           builder.append(firstClosedHour.getReadableHour());
 

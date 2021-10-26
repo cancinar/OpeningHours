@@ -2,7 +2,7 @@ package com.cinar.openinghours.view;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.cinar.openinghours.core.usecase.GetHumanReadableHoursUseCase;
@@ -40,7 +40,7 @@ public class OpenHoursControllerTest {
     final String s = readFile("classpath:json/test-data.json");
     when(getHumanReadableHoursUseCase.execute(any())).thenReturn(
         new GetHumanReadableUseCaseOutput(""));
-    mockMvc.perform(get("/hours/readable")
+    mockMvc.perform(post("/hours/readable")
             .content(s)
             .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk());

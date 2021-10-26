@@ -29,6 +29,7 @@ public class WeekDto {
                 .map(HoursDto::toHourScheduleDomain)
                 .collect(Collectors.toList()))
         .build());
+
     weekDomain.addDay(DayDomain.builder()
         .workday(WeekDays.TUESDAY)
         .hours(
@@ -41,27 +42,30 @@ public class WeekDto {
     weekDomain.addDay(DayDomain.builder()
         .workday(WeekDays.WEDNESDAY)
         .hours(
+            this.wednesday
+                .stream()
+                .map(HoursDto::toHourScheduleDomain)
+                .collect(Collectors.toList()))
+        .build());
+
+    weekDomain.addDay(DayDomain.builder()
+        .workday(WeekDays.THURSDAY)
+        .hours(
             this.thursday
                 .stream()
                 .map(HoursDto::toHourScheduleDomain)
                 .collect(Collectors.toList()))
         .build());
+
     weekDomain.addDay(DayDomain.builder()
-        .workday(WeekDays.THURSDAY)
+        .workday(WeekDays.FRIDAY)
         .hours(
             this.friday
                 .stream()
                 .map(HoursDto::toHourScheduleDomain)
                 .collect(Collectors.toList()))
         .build());
-    weekDomain.addDay(DayDomain.builder()
-        .workday(WeekDays.FRIDAY)
-        .hours(
-            this.saturday
-                .stream()
-                .map(HoursDto::toHourScheduleDomain)
-                .collect(Collectors.toList()))
-        .build());
+
     weekDomain.addDay(DayDomain.builder()
         .workday(WeekDays.SATURDAY)
         .hours(
@@ -70,6 +74,7 @@ public class WeekDto {
                 .map(HoursDto::toHourScheduleDomain)
                 .collect(Collectors.toList()))
         .build());
+
     weekDomain.addDay(DayDomain.builder()
         .workday(WeekDays.SUNDAY)
         .hours(
